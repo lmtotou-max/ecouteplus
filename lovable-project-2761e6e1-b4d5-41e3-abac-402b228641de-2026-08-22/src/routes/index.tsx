@@ -11,39 +11,61 @@ import { Reveal } from "@/components/site/Reveal";
 import { useLang } from "@/lib/language";
 import { WHATSAPP } from "@/lib/content";
 
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      script:[
-      {children: `!function (w, d, t) {
-          w.TiktokAnalyticsObject=t;
-          var ttq=w[t]=w[t]||[];
-          ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
-          ttq.setAndDefer=function(t,e){
-            t[e]=function(){
-              t.push([e].concat(Array.prototype.slice.call(arguments,0)))
+      { title: "Écoute+ — parler, être écouté, avancer" },
+      {
+        name: "description",
+        content:
+          "Un espace d'écoute et de soutien humain à distance au Maroc, sans jugement. Service non médical et non thérapeutique. Réservation par WhatsApp.",
+      },
+      {
+        property: "og:title",
+        content: "Écoute+ — parler, être écouté, avancer",
+      },
+      {
+        property: "og:description",
+        content:
+          "Un espace d'écoute et de soutien humain à distance au Maroc. Service non médical, réservation par WhatsApp.",
+      },
+    ],
+    scripts: [
+      {
+        children: `!function (w, d, t) {
+          w.TiktokAnalyticsObject = t;
+          var ttq = w[t] = w[t] || [];
+          ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
+          ttq.setAndDefer = function (t, e) {
+            t[e] = function () {
+              t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+            };
+          };
+          for (var i = 0; i < ttq.methods.length; i++) {
+            ttq.setAndDefer(ttq, ttq.methods[i]);
+          }
+          ttq.instance = function (t) {
+            for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) {
+              ttq.setAndDefer(e, ttq.methods[n]);
             }
+            return e;
           };
-          for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-          ttq.instance=function(t){
-            for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);
-            return e
-          };
-          ttq.load=function(e,n){
-            var r="https://analytics.tiktok.com/i18n/pixel/events.js";
-            ttq._i=ttq._i||{};
-            ttq._i[e]=[];
-            ttq._i[e]._u=r;
-            ttq._t=ttq._t||{};
-            ttq._t[e]=+new Date;
-            ttq._o=ttq._o||{};
-            ttq._o[e]=n||{};
-            var s=d.createElement("script");
-            s.type="text/javascript";
-            s.async=true;
-            s.src=r+"?sdkid="+e+"&lib="+t;
-            var first=d.getElementsByTagName("script")[0];
-            first.parentNode.insertBefore(s,first);
+          ttq.load = function (e, n) {
+            var r = "https://analytics.tiktok.com/i18n/pixel/events.js";
+            ttq._i = ttq._i || {};
+            ttq._i[e] = [];
+            ttq._i[e]._u = r;
+            ttq._t = ttq._t || {};
+            ttq._t[e] = +new Date;
+            ttq._o = ttq._o || {};
+            ttq._o[e] = n || {};
+            var s = d.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = r + "?sdkid=" + e + "&lib=" + t;
+            var first = d.getElementsByTagName("script")[0];
+            first.parentNode.insertBefore(s, first);
           };
           ttq.load('DB4IJORC77U5NEMP0K90');
           ttq.page();
