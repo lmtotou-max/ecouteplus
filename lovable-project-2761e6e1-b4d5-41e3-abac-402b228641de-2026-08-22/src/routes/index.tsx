@@ -75,22 +75,7 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-      { title: "Écoute+ — parler, être écouté, avancer" },
-      {
-        name: "description",
-        content:
-          "Un espace d'écoute et de soutien humain à distance au Maroc, sans jugement. Service non médical et non thérapeutique. Réservation par WhatsApp.",
-      },
-      { property: "og:title", content: "Écoute+ — parler, être écouté, avancer" },
-      {
-        property: "og:description",
-        content:
-          "Un espace d'écoute et de soutien humain à distance au Maroc. Service non médical, réservation par WhatsApp.",
-      },
-    ],
-  }),
-  component: Index,
-});
+
 
 function HeroShape() {
   return (
